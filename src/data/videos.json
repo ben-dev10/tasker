@@ -1,0 +1,16 @@
+{
+  "videos": [
+    {
+      "id": "1",
+      "title": "React: The documentary",
+      "description": "The origin story of React",
+      "thumbnailURL": ""
+    },
+    {
+      "id": "2",
+      "title": "Rethinking Best Practices",
+      "description": "Pete Hunt (2013)",
+      "thumbnailURL": ""
+    }
+  ]
+}
