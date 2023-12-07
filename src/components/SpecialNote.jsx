@@ -1,6 +1,6 @@
 import { PenBox } from "lucide-react";
 
-export default function SpecialNote() {
+export default function SpecialNote({ openEditModal, specialCard }) {
   return (
     <div className="p-3 flex flex-col px-4 rounded-lg shadow-lg gap-4 min-h-[120px] bg-blue-500 w-full">
       <div className="flex gap-4">
@@ -9,17 +9,14 @@ export default function SpecialNote() {
         </div>
         <div className="text">
           <h4 className="text-white text-[16px] font-bold pb-1">
-            Special Note
+            {specialCard.heading}
           </h4>
-          <p className="leading-tight text-white/[.7]">
-            Click here to add a special note. Special Notes are always pinned to
-            the top
-          </p>
+          <p className="leading-tight text-white/[.7]">{specialCard.body}</p>
         </div>
       </div>
       <div className="self-end mt-auto">
         <button className="">
-          <PenBox size={14} className="text-white" />
+          <PenBox size={14} className="text-white" onClick={openEditModal} />
         </button>
       </div>
     </div>

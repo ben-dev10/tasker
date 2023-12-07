@@ -14,7 +14,7 @@ export default function NavBar() {
         <img
           src={menuIcon}
           alt="menu-icon"
-          className=""
+          className="cursor-pointer"
           onClick={handleBodyStylesAndSheetVisibility}
         />
       </div>

@@ -1,14 +1,17 @@
-import { X } from "lucide-react";
+import { Facebook, X } from "lucide-react";
 
 function Card({ text, bg }) {
   return (
-    <a href="" className="">
-      <div
-        className={`rounded-lg ${bg} text-white w-[120px] p-2 border-2 border-${bg} hover:border-${bg}/50 aspect-video`}
-      >
-        <p>{text}</p>
-      </div>
-    </a>
+    <div className="relative w-max overflow-hidden">
+      <a href="" className="">
+        <div
+          className={`rounded-lg ${bg} text-white w-[120px] p-2 aspect-video`}
+        >
+          <p>{text}</p>
+          <Facebook size={70} className="absolute top-0 right-[-22px] " />
+        </div>
+      </a>
+    </div>
   );
 }
 
@@ -30,8 +33,10 @@ export default function Sheet() {
         />
       </div>
 
-      <div className="mx-auto max-w-[350px] divide-y divide-primary">
-        <Card text="twitter" bg="bg-blue-500" />
+      <div className="mx-auto max-w-[350px]">
+        <div className="text-[16px] font-semibold mb-2">Links</div>
+        <div className="border mb-4 border-dashed"></div>
+        <Card text="Facebook" bg="bg-blue-500" />
       </div>
     </div>
   );

@@ -1,6 +1,13 @@
 import SpecialNote from "./SpecialNote";
+import EditCardModal from "./cgpt/EditCardModal";
 
-export default function Hero() {
+export default function Hero({
+  openEditModal,
+  showEditModal,
+  closeEditModal,
+  updateSpecialCard,
+  specialCard,
+}) {
   let date = new Date();
   let day = date.getDate();
   let month = date.getMonth();
@@ -11,7 +18,14 @@ export default function Hero() {
       <h2 className="text-xl font-bold">Welcome</h2>
       <div className="text-gray-500">{day + "th " + "Dec" + ", " + year}</div>
       <div className="mt-2 mb-5">
-        <SpecialNote />
+        <EditCardModal
+          isOpen={showEditModal}
+          onClose={closeEditModal}
+          onSave={updateSpecialCard}
+          heading={specialCard.heading}
+          body={specialCard.body}
+        />
+        <SpecialNote openEditModal={openEditModal} specialCard={specialCard} />
       </div>
     </div>
   );
