@@ -1,5 +1,6 @@
 import SpecialNote from "./SpecialNote";
 import EditCardModal from "./cgpt/EditCardModal";
+import EditableHeading from "./cgpt/EditableHeading";
 
 export default function Hero({
   openEditModal,
@@ -15,7 +16,11 @@ export default function Hero({
 
   return (
     <div className="mt-3">
-      <h2 className="text-xl font-bold">Welcome</h2>
+      <div className="flex">
+        <h2 className="text-xl font-bold mr-1">Welcome</h2>
+        <EditableHeading />
+      </div>
+      {/* <h2 className="text-xl font-bold">Welcome</h2> */}
       <div className="text-gray-500">{day + "th " + "Dec" + ", " + year}</div>
       <div className="mt-2 mb-5">
         <EditCardModal

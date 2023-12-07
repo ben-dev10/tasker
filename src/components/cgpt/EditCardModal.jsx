@@ -11,7 +11,7 @@ const EditCardModal = ({ isOpen, onClose, onSave, heading, body }) => {
   return (
     isOpen && (
       <div className="overlay bg-black/50 absolute grid place-items-center top-0 left-0 w-[100vw] h-[100vh]">
-        <div className="modal -translate-y-[150px] bg-white absolute border shadow-lg rounded-lg w-[350px]">
+        <div className="modal md:-translate-y-[150px] bg-white absolute border shadow-lg rounded-lg w-[350px]">
           <div className="flex flex-col mb-1 p-5 pb-0">
             <label>Heading</label>
             <input

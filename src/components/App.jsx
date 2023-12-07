@@ -3,6 +3,7 @@ import NavBar from "./NavBar";
 import Hero from "./Hero";
 import Todos from "./Todos";
 import TaskBar from "./TaskBar";
+import { FacebookCard, XCard } from "./ui/Sheet";
 
 export default function App() {
   const [todos, setTodos] = useState([]);
@@ -53,26 +54,36 @@ export default function App() {
           <NavBar />
         </div>
       </header>
-      <main className="max-w-xl mx-auto h-[calc(100vh-50px)]">
-        <div className="wrapper h-full p-3 px-5 pb-0 flex flex-col overflow-hidden">
-          <Hero
-            openEditModal={openEditModal}
-            showEditModal={showEditModal}
-            closeEditModal={closeEditModal}
-            updateSpecialCard={updateSpecialCard}
-            specialCard={specialCard}
-          />
-          <Todos
-            newTodo={newTodo}
-            addTodo={addTodo}
-            todos={todos}
-            toggleTodo={toggleTodo}
-            deleteTodo={deleteTodo}
-            setNewTodo={setNewTodo}
-          />
-          <TaskBar todos={todos} />
+      <main className="max-w-xl mx-auto h-[calc(100vh-75px)]">
+        <div className="wrapper h-full p-3 px-5 pb-0 gap-5 flex overflow-hidden md:pl-0">
+          <div className="sidebar w-[100px] hidden md:flex md:flex-col justify-end pb-2">
+            <FacebookCard scale="scale-[.6] translate-y-[15px]" />
+            <XCard scale="scale-[.6]" />
+          </div>
+          <div>
+            <Hero
+              openEditModal={openEditModal}
+              showEditModal={showEditModal}
+              closeEditModal={closeEditModal}
+              updateSpecialCard={updateSpecialCard}
+              specialCard={specialCard}
+            />
+            <Todos
+              newTodo={newTodo}
+              addTodo={addTodo}
+              todos={todos}
+              toggleTodo={toggleTodo}
+              deleteTodo={deleteTodo}
+              setNewTodo={setNewTodo}
+            />
+          </div>
         </div>
       </main>
+      <footer className="h-[25px] bg-black text-white">
+        <div className="wrapper max-w-xl mx-auto">
+          <TaskBar todos={todos} />
+        </div>
+      </footer>
     </>
   );
 }

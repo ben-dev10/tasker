@@ -42,9 +42,9 @@ export default function Todos({
   setNewTodo,
 }) {
   return (
-    <div className="todolist grow max-h-[340px] mb-auto">
+    <div className="todolist">
       <h6 className="text-[14px] font-bold mb-2">Tasks</h6>
-      <div className="flex gap-3 mb-4 h-[30px]">
+      <div className="flex gap-3 mb-1 h-[30px]">
         <input
           type="text"
           value={newTodo}
@@ -59,7 +59,11 @@ export default function Todos({
           Add todo
         </button>
       </div>
-      <div className="taskslist max-h-[340px] overflow-y-scroll">
+      {/* <div className="border-b border-blue-800 shadow-lg h-4"></div> */}
+      <div
+        className={todos.length > 0 && `border-b border-blue-800 shadow-lg h-4`}
+      ></div>
+      <div className="taskslist max-h-[340px] overflow-y-scroll pt-3 pb-[70px]">
         <TodoList
           todos={todos}
           toggleTodo={toggleTodo}
