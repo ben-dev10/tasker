@@ -21,17 +21,19 @@ export default function App(props) {
 
   // Load todos from local storage on component mount
   useEffect(() => {
-    const storedTodos = JSON.parse(localStorage.getItem("todos")) || [
-      "default",
-    ];
+    const storedTodos = JSON.parse(localStorage.getItem("todos")) || [];
+    const storedSpecialNote =
+      JSON.parse(localStorage.getItem("specialNote")) || {};
 
     setTodos(storedTodos);
+    setSpecialCard(storedSpecialNote);
   }, []);
 
   // Update local storage when todos change
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
-  }, [todos]);
+    localStorage.setItem("specialNote", JSON.stringify(specialCard));
+  }, [todos, specialCard]);
 
   // Todo actions:
   const addTodo = () => {

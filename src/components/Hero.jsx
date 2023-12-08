@@ -22,7 +22,7 @@ export default function Hero({
           Welcome
           <span
             className="border-b border-dashed border-blue-400 ml-1 h-max"
-            // contentEditable="true"
+            contentEditable="true"
             title="Username editable"
           >
             User
