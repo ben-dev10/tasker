@@ -1,0 +1,29 @@
+/* For Webkit-based browsers (Google Chrome, Microsoft Edge) */
+/* You can customize these styles according to your preferences */
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #d1d5db;
+    /* Color of the thumb */
+    border-radius: 999px;
+    /* Rounded corners of the thumb */
+}
+
+::-webkit-scrollbar-track {
+    background-color: #f0f0f0;
+    /* Color of the track */
+}
+
+/* Optional: Handle when the scrollbar is in a hover state */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #9ca3af;
+    /* Color of the thumb on hover */
+}
+
+/* Optional: Handle when the scrollbar is in an active state (clicking and dragging) */
+::-webkit-scrollbar-thumb:active {
+    background-color: #555;
+    /* Color of the thumb when active */
+}

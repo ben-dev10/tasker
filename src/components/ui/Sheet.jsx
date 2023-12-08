@@ -36,11 +36,12 @@ export default function Sheet() {
       id="sheet"
       className="absolute top-0 left-0 p-4 w-full h-[100vh] bg-white/90 hidden backdrop-blur-[10px]"
     >
-      <div onClick={handleClose} className="flex justify-end mb-2">
+      <div className="flex justify-end mb-2">
         <X
           id="close"
           size={18}
           className="cursor-pointer hover:text-black/50"
+          onClick={handleClose}
         />
       </div>
 

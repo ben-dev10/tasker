@@ -2,7 +2,7 @@ import { PenBox } from "lucide-react";
 
 export default function SpecialNote({ openEditModal, specialCard }) {
   return (
-    <div className="p-3 flex flex-col px-4 rounded-lg shadow-lg gap-4 min-h-[120px] bg-blue-500 w-full">
+    <div className="special-note min-w-[130px] p-3 flex flex-col px-4 rounded-lg shadow-lg gap-4 min-h-[120px] bg-blue-500 w-full">
       <div className="flex gap-4">
         <div className="icon-box p-2 bg-white/[.12] rounded-lg h-max">
           <PenBox className="text-white" />

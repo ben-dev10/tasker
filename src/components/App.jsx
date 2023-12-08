@@ -1,11 +1,15 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import NavBar from "./NavBar";
 import Hero from "./Hero";
 import Todos from "./Todos";
 import TaskBar from "./TaskBar";
 import { FacebookCard, XCard } from "./ui/Sheet";
 
-export default function App() {
+let storedTodos = JSON.parse(localStorage.getItem("todos")) || [];
+
+export default function App(props) {
+  const { storedTodos } = props;
+
   const [todos, setTodos] = useState([]);
   const [newTodo, setNewTodo] = useState("");
   const [showEditModal, setShowEditModal] = useState(false);
@@ -15,6 +19,21 @@ export default function App() {
     body: `Click the edit icon at the bottom to add a special note. Special Notes are always pinned to the top.`,
   });
 
+  // Load todos from local storage on component mount
+  useEffect(() => {
+    const storedTodos = JSON.parse(localStorage.getItem("todos")) || [
+      "default",
+    ];
+
+    setTodos(storedTodos);
+  }, []);
+
+  // Update local storage when todos change
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
+
+  // Todo actions:
   const addTodo = () => {
     if (newTodo.trim() !== "") {
       setTodos([...todos, { id: Date.now(), text: newTodo, completed: false }]);

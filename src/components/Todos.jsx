@@ -1,3 +1,5 @@
+import "../styles/scrollbar.css";
+
 function TodoList({ todos, toggleTodo, deleteTodo }) {
   return (
     <ul className="">
@@ -61,7 +63,9 @@ export default function Todos({
       </div>
       {/* <div className="border-b border-blue-800 shadow-lg h-4"></div> */}
       <div
-        className={todos.length > 0 && `border-b border-blue-800 shadow-lg h-4`}
+        className={
+          todos.length > 0 ? `border-b border-blue-800 shadow-lg h-4` : ""
+        }
       ></div>
       <div className="taskslist max-h-[340px] overflow-y-scroll pt-3 pb-[70px]">
         <TodoList
