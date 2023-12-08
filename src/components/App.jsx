@@ -5,14 +5,17 @@ import Todos from "./Todos";
 import TaskBar from "./TaskBar";
 import { FacebookCard, XCard } from "./ui/Sheet";
 
-let storedTodos = JSON.parse(localStorage.getItem("todos")) || [];
+// updates theme
+document.addEventListener("DOMContentLoaded", function () {
+  const savedTheme = localStorage.getItem("theme") || "light";
+  document.documentElement.classList.add(savedTheme);
+});
 
-export default function App(props) {
-  const { storedTodos } = props;
-
+export default function App() {
   const [todos, setTodos] = useState([]);
   const [newTodo, setNewTodo] = useState("");
   const [showEditModal, setShowEditModal] = useState(false);
+  const [username, setUsername] = useState("User");
   const [specialCard, setSpecialCard] = useState({
     id: "specialCard",
     heading: "Special Card",
@@ -24,16 +27,20 @@ export default function App(props) {
     const storedTodos = JSON.parse(localStorage.getItem("todos")) || [];
     const storedSpecialNote =
       JSON.parse(localStorage.getItem("specialNote")) || {};
+    const storedUsername =
+      JSON.parse(localStorage.getItem("username")) || "User"; // the operand after the operator || is default state
 
     setTodos(storedTodos);
     setSpecialCard(storedSpecialNote);
+    setUsername(storedUsername);
   }, []);
 
   // Update local storage when todos change
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
     localStorage.setItem("specialNote", JSON.stringify(specialCard));
-  }, [todos, specialCard]);
+    localStorage.setItem("username", JSON.stringify(username));
+  }, [todos, specialCard, username]);
 
   // Todo actions:
   const addTodo = () => {
@@ -68,9 +75,13 @@ export default function App(props) {
     closeEditModal();
   };
 
+  function handleUsernameInput(e) {
+    setUsername(e.target.innerText);
+  }
+
   return (
     <>
-      <header className="p-3 border-b h-[50px] sticky top-0">
+      <header className="p-3 border-b border-primary h-[50px] sticky top-0">
         <div className="wrapper max-w-xl mx-auto">
           <NavBar />
         </div>
@@ -81,13 +92,15 @@ export default function App(props) {
             <FacebookCard scale="scale-[.6] translate-y-[15px]" />
             <XCard scale="scale-[.6]" />
           </div>
-          <div>
+          <div className="">
             <Hero
               openEditModal={openEditModal}
               showEditModal={showEditModal}
               closeEditModal={closeEditModal}
               updateSpecialCard={updateSpecialCard}
               specialCard={specialCard}
+              username={username}
+              handleUsernameInput={handleUsernameInput}
             />
             <Todos
               newTodo={newTodo}
