@@ -12,13 +12,6 @@ export default function NavBar() {
   return (
     <div className="navbar flex">
       <div className="mr-auto sm:hidden">
-        {/* <img
-          src={menuIcon}
-          alt="menu-icon"
-          className="cursor-pointer dark:text-white"
-          onClick={handleBodyStylesAndSheetVisibility}
-        /> */}
-
         <svg
           onClick={handleBodyStylesAndSheetVisibility}
           className="dark:stroke-[#A3A3A3] cursor-pointer stroke-black"

@@ -1,7 +1,14 @@
-# React.js docs
+# Tasker Todo-list App
 
-Learning it right from the makers themselves.
+![tasker-desktop](./public/tasker-desktop.png)
 
-You can find the react docs [here](www.react.dev).
+A simple todo-list app I'm calling "Tasker". This is a work in progress: built with `Vite+React`, `Tailwind CSS` and `Lucide Icons`.
 
-## Learn: Passing Props to a component
+## Getting started
+
+```bash
+npm i
+npm run dev
+```
+
+View the live version [here](https://ben-dev10.github.io/tasker/).
