@@ -1,7 +1,6 @@
 import SpecialNote from "./SpecialNote";
-import EditCardModal from "./cgpt/EditCardModal";
+import EditCardModal from "./ui/EditCardModal";
 import { PencilIcon } from "lucide-react";
-// import EditableHeading from "./cgpt/EditableHeading";
 
 export default function Hero({
   openEditModal,
@@ -32,14 +31,10 @@ export default function Hero({
             onBlur={handleUsernameInput}
           >
             {username}
-            {/* User */}
           </span>
           <PencilIcon size={14} className="self-end mb-1 ml-3 text-gray-500" />
         </h2>
-        {/* <EditableHeading /> */}
       </div>
-      {/* <h2 className="text-xl font-bold">Welcome</h2> */}
-      {/* <div className="text-gray-500">{day + "th " + "Dec" + ", " + year}</div> */}
       <div className="text-gray-500">{formattedTime}</div>
       <div className="mt-2 mb-5">
         <EditCardModal
