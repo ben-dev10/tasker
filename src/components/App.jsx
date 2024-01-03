@@ -25,8 +25,13 @@ export default function App() {
   // Load todos from local storage on component mount
   useEffect(() => {
     const storedTodos = JSON.parse(localStorage.getItem("todos")) || [];
-    const storedSpecialNote =
-      JSON.parse(localStorage.getItem("specialNote")) || {};
+    const storedSpecialNote = JSON.parse(
+      localStorage.getItem("specialNote")
+    ) || {
+      id: "specialCard",
+      heading: "Special Card",
+      body: `Click the edit icon at the bottom to add a special note. Special Notes are always pinned to the top.`,
+    };
     const storedUsername =
       JSON.parse(localStorage.getItem("username")) || "User"; // the operand after the operator || is default state
 

@@ -9,7 +9,7 @@ lerna-debug.log*
 
 node_modules
 src/archive
-src/components/cgpt
+./src/components/cgpt
 .vscode
 dist
 dist-ssr
